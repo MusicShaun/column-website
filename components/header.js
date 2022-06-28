@@ -9,8 +9,8 @@ connectedCallback() {
   <nav>
     <div class="left">
       <svg class="left-logo"></svg>
-      <div class="left-title">Title</div>
-      <div class="left-dscrp">Some such bull shit</div>
+      <div class="left-title">Company</div>
+      <div class="left-dscrp">Our quick slogan</div>
     </div>
 
     <button class="contact__button">

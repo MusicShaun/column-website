@@ -33,7 +33,7 @@
 @keyframes navFallDown {
   0% {
     transform: translateY(-190px);
-  } 70% {
+  } 60% {
     transform: translateY(-190px);
   } 100% {
     transform: translateY(0);
@@ -42,9 +42,9 @@
 
 @keyframes navRiseUp {
   0% {
-    transform: translateY(190px);
-  } 70% {
-    transform: translateY(190px);
+    transform: translateY(230px);
+  } 60% {
+    transform: translateY(230px);
   } 100% {
     transform: translateY(0);
   }

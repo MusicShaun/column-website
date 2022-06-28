@@ -69,6 +69,14 @@ let ScrollYdistance = window.innerHeight ;
 scrollButtonImg.addEventListener('click', function() {
   window.scrollBy(0, ScrollYdistance);
 })  
+if (window.location.href.includes('pagetwo')) {
+  scrollButton.style.right = `${ColumnWidth}vw`;
+} else if (window.location.href.includes('pagethree')) {
+  scrollButton.style.right = `${ColumnWidth * 2}vw`;
+} else if (window.location.href.includes('pagefour')) {
+  scrollButton.style.right = `${ColumnWidth * 3}vw`;
+} 
+
 
 
 //FOOTER 3D   SCROLL
@@ -94,22 +102,20 @@ document.addEventListener('scroll', function(e) {
   scrollFooter(inversePosition);
 });
 
-
-
 // mobile navigation menu 
 let mNav = false; 
 mobileNav.addEventListener('click', function insertMobileNav() {
-  const mobileNav = document.createElement('nav-component');
+  const mobileNavComp = document.createElement('nav-component');
 
   if (!mNav){
-    body.appendChild(mobileNav);
+    mainPage.appendChild(mobileNavComp);
+    nav.classList.add('highZ');
     mNav = !mNav;
-    mainPageExceptNav.style.display = 'none';
   } else {
     let element = document.getElementById('nav-menu');
     element.parentNode.removeChild(element);
+    nav.classList.remove('highZ');
     mNav = !mNav;
-    mainPageExceptNav.style.display = 'inherit';
   }
 });
 

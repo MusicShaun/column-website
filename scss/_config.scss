@@ -30,4 +30,12 @@ $smallFont: 1.5rem;
 $smallerFont: 1rem;
 
 
+@mixin iconSize {
+  max-width: 6vw;
+  max-height: 6vw;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+
 $mobileAnimationSlide: 0;

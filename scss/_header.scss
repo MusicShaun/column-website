@@ -38,8 +38,8 @@ nav {
     margin-left: 6rem;
 
     &-logo {
-      width: 100px;
-      height: 100px;
+      width: 6vw;
+      height: 6vw;
       background-image: url(/img/baby-feet.svg);
       background-repeat: no-repeat;
       opacity: 0.6;
@@ -52,7 +52,7 @@ nav {
     }
     &-dscrp {
       font-size: $smallerFont;
-      width: 100px;
+      width: 5vw;
       opacity: 0.6;
     }
   }

@@ -38,7 +38,7 @@
   0% {
     transform: translateY(-190px);
   }
-  70% {
+  60% {
     transform: translateY(-190px);
   }
   100% {
@@ -48,10 +48,10 @@
 
 @keyframes navRiseUp {
   0% {
-    transform: translateY(190px);
+    transform: translateY(230px);
   }
-  70% {
-    transform: translateY(190px);
+  60% {
+    transform: translateY(230px);
   }
   100% {
     transform: translateY(0);
@@ -249,7 +249,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 9.5rem;
+  margin-left: 6rem;
 }
 
 .hero div + div svg {
@@ -342,44 +342,51 @@ footer .footer-container > div {
   width: 20%;
 }
 
+.footer__center-1 {
+  display: flex;
+  align-items: center;
+}
+
 .footer__center-1 a {
   position: relative;
   display: flex;
   align-items: center;
-  width: 230px;
-  padding: 1rem;
-  margin-top: 10px;
-  border-radius: 40px;
-  border: 1px solid #c1a5d5;
+  justify-content: space-between;
+  width: 16vw;
+  font-size: 2rem;
 }
 
-.footer__center-1 a span:last-child {
+.footer__center-1 a div:last-child {
   position: absolute;
   left: 10rem;
   display: flex;
-  align-items: center;
-  padding: 0.9rem;
-  background-color: #f9f5ed;
-  border-radius: 50%;
 }
 
 .footer__center-1 a svg {
-  width: 40px;
-  height: 40px;
-  background-image: url(/img/email.svg);
+  max-width: 6vw;
+  max-height: 6vw;
+  min-width: 80px;
+  min-height: 80px;
+  background-image: url(/img/icons8-mail.svg);
+  background-repeat: no-repeat;
 }
 
 .footer__center-2 {
   display: flex;
   flex-direction: row;
-  border: 3px solid pink;
+  max-width: 25vw;
 }
 
-.footer__center-2 a > svg {
+.footer__center-2 a {
   display: flex;
-  flex: 2 0.15 100px;
+}
+
+.footer__center-2 a svg {
+  max-width: 6vw;
+  max-height: 6vw;
+  min-width: 80px;
+  min-height: 80px;
   background-repeat: no-repeat;
-  border: 1px solid black;
 }
 
 .footer__center-2 a:first-child svg {
@@ -398,16 +405,15 @@ footer .footer-container > div {
   background-image: url(/img/icons8-github.svg);
 }
 
-#socialTags {
-  flex: 0.7;
-}
-
 .footer__bottom {
   width: 20%;
 }
 
 .footer__bottom-1 {
-  font-size: 3rem;
+  width: 60%;
+  height: 3vw;
+  background-image: url(/img/svgator-seeklogo.com.svg);
+  background-repeat: no-repeat;
 }
 
 .footer__bottom-2 {
@@ -459,8 +465,8 @@ nav .left {
 }
 
 nav .left-logo {
-  width: 100px;
-  height: 100px;
+  width: 6vw;
+  height: 6vw;
   background-image: url(/img/baby-feet.svg);
   background-repeat: no-repeat;
   opacity: 0.6;
@@ -475,7 +481,7 @@ nav .left-title {
 
 nav .left-dscrp {
   font-size: 1rem;
-  width: 100px;
+  width: 5vw;
   opacity: 0.6;
 }
 
@@ -517,6 +523,9 @@ nav .left-dscrp {
     border: none;
     background-color: none;
   }
+  .highZ {
+    z-index: 1000 !important;
+  }
   .mobileNav {
     position: fixed;
     left: 0;
@@ -526,7 +535,9 @@ nav .left-dscrp {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background-color: #F5F3E7;
     transition: 1s linear;
+    z-index: 11;
   }
   .mobileNav a {
     position: absolute;
@@ -539,19 +550,19 @@ nav .left-dscrp {
   .mobileNav__1 {
     top: 13vh;
     transform: rotate(355deg);
-    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.1s 1 forwards;
+    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.5s 1 forwards;
     background-color: #8bc3d2;
   }
   .mobileNav__2 {
     top: 26vh;
     transform: rotate(345deg);
-    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.1s 1 forwards;
+    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.33s 1 forwards;
     background-color: #ebc661;
   }
   .mobileNav__3 {
     top: 40vh;
     transform: rotate(335deg);
-    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.1s 1 forwards;
+    animation: mobileNav 1s cubic-bezier(0.17, 0.67, 0.45, 1.02) 0.2s 1 forwards;
     background-color: #e79b5d;
   }
   .mobileNav__4 {

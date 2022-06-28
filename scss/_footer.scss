@@ -27,7 +27,7 @@ footer {
   }
 }
 
-// styling
+// top third
 .footer {
   &__box {
     margin-top: 4rem;
@@ -57,46 +57,48 @@ footer {
   }
 }
 
+// middle third
 .footer__center {
   width: 20%;
+  &-1 {
+    display: flex;
+    align-items: center;
+  }
 
   &-1 a {
     position: relative;
     display: flex;
     align-items: center;
-    width: 230px;
-    padding: 1rem;
-    margin-top: 10px;
-    border-radius: 40px;
-    border: 1px solid rgb(193, 165, 213);
+    justify-content: space-between;
+    width: 16vw;
+    font-size: $mediumFont;
 
-    & span:last-child {
+    & div:last-child {
       position: absolute;
       left: 10rem;
       display: flex;
-      align-items: center;
-      padding: 0.9rem;
-      background-color: #f9f5ed;
-      border-radius: 50%;
     }
     & svg {
-      width: 40px;
-      height: 40px;
-      background-image: url(/img/email.svg);
+      @include iconSize;
+      background-image: url(/img/icons8-mail.svg);
+      background-repeat: no-repeat;
     }
   }
 }
 
+
 .footer__center-2 {
   display: flex;
   flex-direction: row;
-  border: 3px solid pink;
+  max-width: 25vw;
 
-  & a > svg {
+  & a {
     display: flex;
-    flex: 2 0.15 100px;
-    background-repeat: no-repeat;
-    border: 1px solid black;
+
+    & svg {
+      @include iconSize;
+      background-repeat: no-repeat;
+    }
   }
   & a:first-child svg {
     background-image: url(/img/icons8-facebook.svg);  }
@@ -107,15 +109,21 @@ footer {
   & a:nth-child(4) svg{
     background-image: url(/img/icons8-github.svg);  }
 }
-#socialTags {
-  flex: 0.7;
-}
 
+// #socialTags {
+//   flex: 0.7;
+// }
+
+
+
+// bottom third
 .footer__bottom {
   width: 20%;
   &-1 {
-    font-size: 3rem;
-
+    width: 60%;
+    height: 3vw;
+    background-image: url(/img/svgator-seeklogo.com.svg);
+    background-repeat: no-repeat;
   }
   &-2 {
     display: flex;

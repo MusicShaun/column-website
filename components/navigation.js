@@ -7,22 +7,22 @@ class MobileNav extends HTMLElement {
     this.innerHTML = `
 
   <div class="mobileNav" id="nav-menu">
-    <a class="mobileNav__1">
+    <a href="http://127.0.0.1:5500/static/index.html" class="mobileNav__1">
       <div class="mobileNav__text mobileNav__text-1">
         <div>Cuz</div>
       </div>
     </a>
-    <a class="mobileNav__2">
+    <a href="http://127.0.0.1:5500/static/pagetwo.html" class="mobileNav__2">
       <div class="mobileNav__text mobileNav__text-2">
         <div>bruzzy</div>
       </div>
     </a>
-    <a class="mobileNav__3">
+    <a href="http://127.0.0.1:5500/static/pagethree.html" class="mobileNav__3">
       <div class="mobileNav__text mobileNav__text-3">
         <div>muzz</div>
       </div>
     </a>
-    <a class="mobileNav__4">
+    <a href="http://127.0.0.1:5500/static/pagefour.html" class="mobileNav__4">
       <div class="mobileNav__text mobileNav__text-4">
         <div>fuzz</div>
       </div>
@@ -33,3 +33,4 @@ class MobileNav extends HTMLElement {
 }
 
 customElements.define('nav-component', MobileNav);
+

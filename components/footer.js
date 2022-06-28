@@ -17,8 +17,8 @@ connectedCallback() {
     <div class="footer__box">
       <div class="footer__center-1 footer__left">
       <a>
-        <span>Reach out mail</span>
-        <span><svg></svg></span>
+        <div>Reach out mail</div>
+        <svg></svg>
       </a>
       </div>
 
@@ -32,7 +32,7 @@ connectedCallback() {
     </div>
 
     <div class="footer__box ">
-      <div class="footer__bottom-1 footer__left">logo</div>
+      <img class="footer__bottom-1 footer__left"></img>
       <div class="footer__bottom-2 footer__center">all rights reserved 
         <span>Glossary</span>
       </div>
