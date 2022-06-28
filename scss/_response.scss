@@ -1,0 +1,21 @@
+@media screen and (max-width: 1000px) {  body {
+
+.container123, .container456, .container789, .containerLast  {
+  display: none;
+}
+nav {
+  width: 100vw;
+
+  & .contact__button {
+    display: none;
+  }
+}
+main { 
+    width: 100vw;
+
+    & .hero {
+      width: 100vw;
+    }
+
+  }
+}}

@@ -1,0 +1,72 @@
+main {
+  left: calc(#{$columnWidth * 3});
+} 
+
+.hero {
+  position: absolute;
+  top: 0;
+  width: 73vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  color: $globalGrey;
+  overflow-y: hidden;
+
+  & .pageTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    overflow-y: hidden;
+    height: 170px;
+    width: fit-content;
+
+    & div:first-child {
+      animation: textAppearY $contentLoadTime linear 1;
+    }
+    & > div + div {
+    font-size: 2rem;
+    color: orange;
+    }
+  }
+
+  & div + div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 9.5rem;
+
+    & svg {
+      margin-right: 5rem;
+      width: 80px;
+      height: 80px;
+      filter: invert(0.6);
+      background-image: url(/img/flower.svg);
+      background-repeat: no-repeat;
+    }
+  }
+  & div:nth-child(3) {
+    margin-top: 3rem;
+    margin-left: 33rem ;
+    font-size: 2rem;
+    color: orange;
+  }
+}
+
+
+.halfway {
+  position: relative;
+  top: 100vh;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: $globalGrey;
+  font-size: 7rem;
+  border: solid black 2px;
+
+}
+
