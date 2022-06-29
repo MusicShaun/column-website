@@ -18,7 +18,11 @@ connectedCallback() {
       <svg class="contactSVG" ></svg>
     </button>
 
-    <button class="nav-menu-icon">===</button>
+    <button class="hamburger" style="display: none">
+    <div class="hamburger__line hamburger__line-1" ></div>
+    <div class="hamburger__line hamburger__line-2" ></div>
+    <div class="hamburger__line hamburger__line-3" ></div>
+    </button>
   </nav>
 
   `

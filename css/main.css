@@ -209,10 +209,6 @@
   justify-content: right;
 }
 
-main {
-  left: calc(27vw);
-}
-
 .hero {
   position: absolute;
   top: 0;
@@ -298,9 +294,8 @@ footer .footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
-  height: 80%;
-  grid-gap: 2rem;
+  width: 86%;
+  height: 86%;
 }
 
 footer .footer-container > div {
@@ -330,6 +325,7 @@ footer .footer-container > div {
 .footer__left-2, .footer__left-3 {
   display: flex;
   flex-direction: column;
+  width: 20%;
   font-size: 1.5rem;
 }
 
@@ -351,8 +347,7 @@ footer .footer-container > div {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 16vw;
+  width: 100%;
   font-size: 2rem;
 }
 
@@ -510,19 +505,7 @@ nav .left-dscrp {
   cursor: pointer;
 }
 
-.nav-menu-icon {
-  display: none;
-}
-
-@media screen and (max-width: 1000px) {
-  .nav-menu-icon {
-    display: block;
-    cursor: pointer;
-    padding: 2rem;
-    margin-right: 5rem;
-    border: none;
-    background-color: none;
-  }
+@media screen and (max-width: 1024px) {
   .highZ {
     z-index: 1000 !important;
   }
@@ -535,7 +518,7 @@ nav .left-dscrp {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: #F5F3E7;
+    background-color: #f5f5f4;
     transition: 1s linear;
     z-index: 11;
   }
@@ -600,17 +583,59 @@ nav .left-dscrp {
   .mobileNav__text-4 {
     transform: rotate(395deg);
   }
+  .hamburger {
+    position: relative;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    max-width: 6rem;
+    max-height: 6rem;
+    padding: 10px;
+    background-color: none;
+    background: none;
+    border: none;
+    outline: inherit;
+  }
+  .hamburger__line {
+    position: absolute;
+    border: 2px solid black;
+    width: 40px;
+    transition: 0.2s linear;
+  }
+  .hamburger__line-1 {
+    top: 10px;
+  }
+  .hamburger__line-2 {
+    bottom: 10px;
+  }
+  .hamburger__line-3 {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   body .container123, body .container456, body .container789, body .containerLast {
     display: none;
   }
   body nav {
     width: 100vw;
+    height: 14vh;
+    justify-content: left;
+  }
+  body nav .left {
+    margin-left: 7vw;
   }
   body nav .contact__button {
     display: none;
+  }
+  body nav .left-dscrp {
+    display: none;
+  }
+  body nav .hamburger {
+    display: flex !important;
+    margin-left: auto;
+    margin-right: 7vw;
   }
   body main {
     width: 100vw;
@@ -618,6 +643,87 @@ nav .left-dscrp {
   body main .hero {
     width: 100vw;
   }
+  body .footer__box:first-child {
+    margin-bottom: 0;
+    margin-top: 0rem;
+  }
+  body .footer__left {
+    width: 50%;
+  }
+  body .footer__left-1 {
+    line-height: 3rem;
+    font-size: 3rem;
+  }
+  body .footer__left-2, body .footer__left-3 {
+    width: 25%;
+    font-size: 1rem;
+  }
+  body .footer__bottom-2 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .mobileNav__text {
+    margin-top: 2rem;
+    margin-left: 8rem;
+  }
+  body footer .footer__box:first-child {
+    display: none;
+  }
+  body footer .footer__box:nth-child(2) {
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+  }
+  body footer .footer__center-1 {
+    width: 100%;
+  }
+  body footer .footer__center-1 a {
+    justify-content: center;
+  }
+  body footer .footer__center-2 {
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+  }
+  body footer .footer__center-2 a {
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body .left-title {
+    font-size: 2rem;
+    margin: 0 2rem 0 0.5rem;
+  }
+  body .mobileNav__text {
+    margin-top: 1.5rem;
+    margin-left: 6rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body .left-title {
+    font-size: 1.5rem;
+  }
+  body footer .footer__center-2 a {
+    margin: 0;
+  }
+}
+
+.body {
+  display: none;
+}
+
+#loading {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f4;
 }
 
 * {
@@ -631,7 +737,7 @@ body, html {
   width: 100vw;
   height: 100%;
   max-height: 300vh;
-  background-color: #F5F3E7;
+  background-color: #f5f5f4;
   overflow-x: hidden;
   scroll-behavior: smooth;
   overscroll-behavior: none;
@@ -642,5 +748,6 @@ main {
   width: calc(100vw - 27vw);
   height: 300vh;
   z-index: 2;
+  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */

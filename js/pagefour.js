@@ -1,10 +1,11 @@
 
-import { transitionTime, page1LOAD, page2LOAD, page3LOAD, mainPage, SVGandTEXT, pageClear} from '../modules/main.mjs';
+import { transitionTime, page1LOAD, page2LOAD, page3LOAD, SVGandTEXT, pageClear} from '../modules/main.mjs';
 import {styleA, slide7 } from '../modules/animations.mjs';
 
 const ten = document.querySelector('.ten');
 const eleven = document.querySelector('.eleven');
 const twelve = document.querySelector('.twelve');
+
 
 
 ten.addEventListener('click', () => { 
@@ -36,8 +37,4 @@ function page4animation(elementClass) {
 }
 
 
-// ALIGNS MAIN WINDOW WITH COLUMNS
-if (window.location.href.includes('pagefour')) {
-  mainPage.style.left = `0`;
-}
 

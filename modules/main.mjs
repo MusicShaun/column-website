@@ -7,6 +7,7 @@ export const blankDiv = document.createElement('div');
 blankDiv.classList.add('blankDiv'); 
 export let URLstring = window.location.href;
 export const SVG = document.querySelectorAll('.column__data-svg');
+
 export const columnText = document.querySelectorAll('.column__data-text')
 export const nav = document.querySelector('nav');
 export const mainContainer = document.querySelector('.main__container');
@@ -14,9 +15,17 @@ export const ColumnWidth = '9'; // must change config column width before this
 
 export const mainPage = document.querySelector('main');
 export const mainPageExceptNav = document.querySelector('.main__container');
+
 const footer = body.querySelector('footer');
 const footerContainer = document.querySelector('.footer-container');
-const mobileNav = document.querySelector('.nav-menu-icon');
+
+const hamburger = document.querySelector('.hamburger');
+const hamburgerLine1 = document.querySelector('.hamburger__line-1');
+const hamburgerLine2 = document.querySelector('.hamburger__line-2');
+const hamburgerLine3 = document.querySelector('.hamburger__line-3');
+
+let mediaQuery = window.matchMedia('(min-width: 1024px)');
+
 
 // PAGE LOAD DELAY
 export function page1LOAD() {
@@ -40,6 +49,7 @@ export function page4LOAD() {
   }, hrefDly);
 }
 
+
 // COLUMN DATA EFFECTs
 export function SVGandTEXT() {
   for (const i of SVG) {
@@ -58,6 +68,7 @@ export function pageClear() {
 }
 
 
+
 // PAGE SCROLL BUTTON
 const scrollButton = document.createElement('button');
 const scrollButtonImg = document.createElement('img');
@@ -69,24 +80,24 @@ let ScrollYdistance = window.innerHeight ;
 scrollButtonImg.addEventListener('click', function() {
   window.scrollBy(0, ScrollYdistance);
 })  
-if (window.location.href.includes('pagetwo')) {
-  scrollButton.style.right = `${ColumnWidth}vw`;
-} else if (window.location.href.includes('pagethree')) {
-  scrollButton.style.right = `${ColumnWidth * 2}vw`;
-} else if (window.location.href.includes('pagefour')) {
-  scrollButton.style.right = `${ColumnWidth * 3}vw`;
+
+if (window.location.href.includes('pagetwo') && mediaQuery.matches) {
+  scrollButton.style.right = `${ColumnWidth * 1.3}vw`;
+} else if (window.location.href.includes('pagethree') && mediaQuery.matches) {
+  scrollButton.style.right = `${ColumnWidth * 2.3}vw`;
+} else if (window.location.href.includes('pagefour') && mediaQuery.matches) {
+  scrollButton.style.right = `${ColumnWidth * 3.3}vw`;
 } 
+
 
 
 
 //FOOTER 3D   SCROLL
 let lastKnownScrollPosition = 0;
 let ticking = false;
-
 function scrollFooter(Yposition) {
   footerContainer.style.transform = `translate3d(0px, ${Yposition}px, 0px)`;
 }
-
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
 
@@ -97,26 +108,107 @@ document.addEventListener('scroll', function(e) {
     });
     ticking = true;
   }
-
   let inversePosition = (lastKnownScrollPosition / 2) + (-window.innerHeight); 
   scrollFooter(inversePosition);
 });
 
-// mobile navigation menu 
+
+
+// mobile navigation hamburger
 let mNav = false; 
-mobileNav.addEventListener('click', function insertMobileNav() {
+hamburger.addEventListener('click', function insertMobileNav() {
   const mobileNavComp = document.createElement('nav-component');
 
   if (!mNav){
     mainPage.appendChild(mobileNavComp);
     nav.classList.add('highZ');
+
+    hamburgerLine1.style.transform = 'rotate(45deg)';
+    hamburgerLine1.style.top = '22.5px';
+    hamburgerLine2.style.transform = 'rotate(-45deg)';
+    hamburgerLine2.style.bottom = '22.5px';
+    hamburgerLine3.style.opacity = '0';
     mNav = !mNav;
+    console.log('nav-component added ')
   } else {
     let element = document.getElementById('nav-menu');
     element.parentNode.removeChild(element);
     nav.classList.remove('highZ');
+
+    hamburgerLine1.style.transform = 'rotate(0deg)';
+    hamburgerLine1.style.top = '10px';
+    hamburgerLine2.style.transform = 'rotate(-0deg)';
+    hamburgerLine2.style.bottom = '10px';
+    hamburgerLine3.style.opacity = '1';
     mNav = !mNav;
   }
 });
+
+
+
+//MOVE COLUMNS ON PAGE LOAD 
+function checkIndexLeft() { 
+  if (mediaQuery.matches){
+    if (!URLstring.includes('page')) {
+      mainPage.style.left = `${ColumnWidth * 3}vw`;
+      console.log('ccccc')
+    } else     if (URLstring.includes('pagetwo')) {
+      mainPage.style.left = `${ColumnWidth * 2}vw`;
+
+    } else if (URLstring.includes('pagethree')) {
+      mainPage.style.left = `${ColumnWidth * 1}vw`;
+
+    } else if (URLstring.includes('pagefour')) {
+      mainPage.style.left = `0vw`;
+    }
+  }
+}
+checkIndexLeft();
+
+
+
+
+// CHECK IF RESIZING WINDOW
+window.addEventListener('resize', function() {
+  console.log('resized left position')
+  if (!mediaQuery.matches) {
+    mainPage.style.left = '0';
+
+  } else if(!URLstring.includes('pagetwo' || 'pagethree' || 'pagefour')) {
+    mainPage.style.left = `${ColumnWidth * 3}vw`
+
+  } else if (URLstring.includes('pagetwo')) {
+    mainPage.style.left = `${ColumnWidth * 2}vw`;
+
+  } else if (URLstring.includes('pagethree')) {
+    mainPage.style.left = `${ColumnWidth * 1}vw`;
+
+  } else if (URLstring.includes('pagefour')) {
+    mainPage.style.left = `0vw`;
+  } 
+});
+
+
+
+
+
+// Hide page until loaded // This excludes the columns
+function onReady(callback) {
+  let intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('main')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 0);
+}
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+onReady(function() {
+  setVisible('.page', true);
+  setVisible('#loading', false);
+});
+
+
 
 

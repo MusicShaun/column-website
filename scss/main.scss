@@ -6,6 +6,8 @@
 @import 'header';
 @import 'mobileNav';
 @import 'response';
+@import 'loadingScreen';
+
 
 
 * {
@@ -29,6 +31,7 @@ main {
   width: calc(100vw - #{$columnWidth * 3});
   height: 300vh;
   z-index: 2;
+  overflow: hidden;
 }
 
 
