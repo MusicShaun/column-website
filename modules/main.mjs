@@ -170,22 +170,23 @@ checkIndexLeft();
 
 // CHECK IF RESIZING WINDOW
 window.addEventListener('resize', function() {
-  console.log('resized left position')
+  console.log('resizing')
   if (!mediaQuery.matches) {
     mainPage.style.left = '0';
+    console.log('mediaQuery 1024px ')
 
-  } else if(!URLstring.includes('pagetwo' || 'pagethree' || 'pagefour')) {
-    mainPage.style.left = `${ColumnWidth * 3}vw`
-
-  } else if (URLstring.includes('pagetwo')) {
+  } 
+   else if (URLstring.includes('two')) {
     mainPage.style.left = `${ColumnWidth * 2}vw`;
 
-  } else if (URLstring.includes('pagethree')) {
-    mainPage.style.left = `${ColumnWidth * 1}vw`;
+  } else if (URLstring.includes('three')) {
+    mainPage.style.left = `${ColumnWidth}vw`;
 
-  } else if (URLstring.includes('pagefour')) {
+  } else if (URLstring.includes('four')) {
     mainPage.style.left = `0vw`;
   } 
+  else if(!URLstring.includes('two' || 'three' || 'four')) {
+    mainPage.style.left = `${ColumnWidth * 3}vw`}
 });
 
 
