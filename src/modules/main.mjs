@@ -30,22 +30,22 @@ let mediaQuery = window.matchMedia('(min-width: 1024px)');
 // PAGE LOAD DELAY
 export function page1LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/index.html";
+    location.href = "/";
   }, hrefDly);
 }
 export function page2LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/src/static/pagetwo.html";
+    location.href = "pagetwo.html";
   }, hrefDly);
 }
 export function page3LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/src/static/pagethree.html";
+    location.href = "pagethree.html";
   }, hrefDly);
 }
 export function page4LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/src/static/pagefour.html";
+    location.href = "pagefour.html";
   }, hrefDly);
 }
 
