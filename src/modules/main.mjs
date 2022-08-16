@@ -30,22 +30,22 @@ let mediaQuery = window.matchMedia('(min-width: 1024px)');
 // PAGE LOAD DELAY
 export function page1LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/static/index.html";
+    window.location.href = "http://127.0.0.1:5500/index.html";
   }, hrefDly);
 }
 export function page2LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/static/pagetwo.html";
+    window.location.href = "http://127.0.0.1:5500/src/static/pagetwo.html";
   }, hrefDly);
 }
 export function page3LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/static/pagethree.html";
+    window.location.href = "http://127.0.0.1:5500/src/static/pagethree.html";
   }, hrefDly);
 }
 export function page4LOAD() {
   setTimeout(() =>{
-    window.location.href = "http://127.0.0.1:5500/static/pagefour.html";
+    window.location.href = "http://127.0.0.1:5500/src/static/pagefour.html";
   }, hrefDly);
 }
 
@@ -71,7 +71,7 @@ export function pageClear() {
 
 // PAGE SCROLL BUTTON
 const scrollButton = document.createElement('button');
-const scrollButtonImg = document.createElement('img');
+const scrollButtonImg = document.createElement('div');
 scrollButton.classList.add('autoScrollButton');
 mainPage.appendChild(scrollButton);
 scrollButtonImg.classList.add('autoScrollButton__img');

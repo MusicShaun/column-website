@@ -10,8 +10,8 @@ connectedCallback() {
   <div class="footer-container">
     <div class="footer__box">
       <div class="footer__left-1 footer__left">Want our help?<br> We got you</div>
-      <div class="footer__left-2 footer__center"><span>Contact</span>pages some shit</div>
-      <div class="footer__left-3 footer__bot"><span>count dracula</span>pages and resources</div>
+      <div class="footer__left-2 footer__center"><span>Contact</span>pages and some</div>
+      <div class="footer__left-3 footer__bot"><span>Other thing</span>pages and resources</div>
     </div>
       
     <div class="footer__box">

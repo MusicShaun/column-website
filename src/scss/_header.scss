@@ -67,7 +67,7 @@ nav {
   border-radius: 50%;
   animation: navRiseUp $contentLoadTimeSlow cubic-bezier(0.26, 1.2, 0.76, 1.22)  1;
   transition: $transitionerQuick;
-  background-color: $ColorOne;
+  background-color: $ColorOne; 
   border: none;
   z-index: 1;
 
@@ -79,7 +79,7 @@ nav {
     stroke: transparent;
     stroke-width: 0px;
     background-repeat: no-repeat;
-    background-image: url(/img/down-arrow.svg);
+    background-image: url(../src/img/down-arrow.svg);
     cursor: pointer;
   }
 }
