@@ -82,4 +82,30 @@ nav {
     background-image: url(../src/img/down-arrow.svg);
     cursor: pointer;
   }
+  animation: bouncy ease-out 3.5s infinite;
+  animation-delay: 2s;
+  @keyframes bouncy {
+    0% {
+      top: 88vh;
+      transform: rotate(0deg);
+    } 4% {
+      top: 82vh;
+      transform: rotate(45deg);
+    } 8% {
+      transform: rotate(-45deg);
+    } 13% {
+      transform: rotate(20deg);
+    } 19% {
+      transform: rotate(-20deg);
+    } 25% {
+      top: 82vh;
+      transform: rotate(5deg);
+    } 31% {
+      top: 88vh;
+      transform: rotate(0deg);
+    } 100% {
+      top: 88vh;
+
+    }
+  }
 }
